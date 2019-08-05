@@ -3,21 +3,21 @@
 
 
 <p align="center">
-  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/StaticLoadCaseTwoRectangle.png" width="100%">
+  <img src="https://github.com/DMST1990/ToOptixCore/blob/master/Images/StaticLoadCaseTwoRectangle.png" width="100%">
 </p>
 
 
 <p align="center">
-  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/HeatLoadCaseTwoRectangle.png" width="100%">
+  <img src="https://github.com/DMST1990/ToOptixCore/blob/master/Images/HeatLoadCaseTwoRectangle.png" width="100%">
 </p>
 
 
 <p align="center">
-  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/QuadraticPlateLoadCase.png" width="100%">
+  <img src="https://github.com/DMST1990/ToOptixCore/blob/master/Images/QuadraticPlateLoadCase.png" width="100%">
 </p>
 
 <p align="center">
-  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/NoDesignSpace.png" width="100%">
+  <img src="https://github.com/DMST1990/ToOptixCore/blob/master/Images/NoDesignSpace.png" width="100%">
 </p>
 
 
@@ -84,6 +84,8 @@ You can specify the non design space by another material definition. So that Sol
 - You can specify your own non design space by creating a element set in '.inp' file and use the name of the element set as the non design space definition
 
 ```python,example
+
+#### No design space
 
 from run_optimization import run_optimization
 
