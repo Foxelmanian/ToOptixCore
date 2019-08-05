@@ -112,7 +112,7 @@ for vol_frac in [0.4, 0.6]:
 
 ### Blender AddOn
 Location of the Blender Addon
-[GitHub Pages](https://github.com/DMST1990/ToOptixBlenderAddon)
+[Blender Addon](https://github.com/DMST1990/ToOptixBlenderAddon)
 
 
 ### FreeCAD Macro
