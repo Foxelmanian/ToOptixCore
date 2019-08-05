@@ -116,7 +116,8 @@ Location of the Blender Addon
 
 
 ### FreeCAD Macro
-
+Location of the Blender Addon
+[FreeCAD Addon](https://github.com/DMST1990/ToOptixFreeCADAddon)
 
 ## Output
 - STL File in a specific folder for every optimizaiton step
