@@ -1,3 +1,12 @@
+# Folder which is created for the tests as default
+work/
+# CalculixRunFile
+spooles.out
+
+# IDE
+.idea/
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
