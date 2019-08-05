@@ -4,7 +4,6 @@ from enum import Enum
 import json
 
 
-
 def run_optimization(penal,  matSets, opti_type, sol_type,
                      weight_factors, max_iteration, vol_frac,
                      files, workDir='work', solverPath='ccx', 
@@ -46,7 +45,7 @@ if __name__ == "__main__":
     heat_job = os.path.join('test', 'TestData', 'HeatTransferTestCase_1.inp')
     files = [static_job, heat_job]
     vol_frac = 0.3
-    penal = 2.4
+    penal = 3.0
     max_iteration = 5
     matSets = 10
     weight_factors = [1.0, 1.0]

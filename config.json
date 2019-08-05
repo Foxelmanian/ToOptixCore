@@ -1,5 +1,5 @@
 {
-    "ccx_path": "ccx",
+    "ccx_path": ".\\ccx.exe",
     "work_path": "work",
     "cpus": 6
 }

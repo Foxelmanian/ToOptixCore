@@ -2,6 +2,7 @@
 work/
 # CalculixRunFile
 spooles.out
+ccx.exe
 
 # IDE
 .idea/
