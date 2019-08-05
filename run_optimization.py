@@ -41,8 +41,8 @@ if __name__ == "__main__":
     opti_type = "seperated"
     sol_type = ["heat", "static"]
 
-    static_job = os.path.join('test', 'TestData', 'StaticTestCase_1.inp')
-    heat_job = os.path.join('test', 'TestData', 'HeatTransferTestCase_1.inp')
+    static_job = os.path.join('test', 'TestData', 'StaticTestCase.inp')
+    heat_job = os.path.join('test', 'TestData', 'HeatTransferTestCase.inp')
     files = [static_job, heat_job]
     vol_frac = 0.3
     penal = 3.0
