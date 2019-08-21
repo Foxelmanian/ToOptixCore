@@ -1,5 +1,5 @@
 from .Triangle import Triangle
-from typing import List
+
 
 class Solid(object):
     """ A solid structure defined by triangles
@@ -16,7 +16,7 @@ class Solid(object):
     >>> s1 = Solid(1, [t1, t2, t3, t4])
     """
 
-    def __init__(self, id: int, triangles: List[Triangle]):
+    def __init__(self, id, triangles):
         self.__id = id
         self.__triangles = triangles
 

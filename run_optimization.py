@@ -1,6 +1,5 @@
 from TopologyOptimizer.OptimizationController import OptimizationController
 import os
-from enum import Enum
 import json
 
 

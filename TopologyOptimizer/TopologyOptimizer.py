@@ -1,4 +1,3 @@
-from typing import List, Dict
 from .FEMPy.Element import Element
 from .FEMPy.ElementSet import ElementSet
 from . import DensityMaterial
@@ -7,7 +6,7 @@ import numpy as np
 
 class TopologyOptimizer(object):
 
-    def __init__(self, density: List[float], density_material: DensityMaterial, compaction_ratio=0.3):
+    def __init__(self, density, density_material, compaction_ratio=0.3):
         self.__system_answer = []
         self.__system_sensitivity = []
         self.__current_density = np.array(density)
@@ -21,7 +20,7 @@ class TopologyOptimizer(object):
         self.__compaction_ratio = compaction_ratio
         self.__no_design_space = []
 
-    def set_no_design_space(self, elements: Dict[int, Element], no_design_space_elements):
+    def set_no_design_space(self, elements, no_design_space_elements):
         print("No design space is active with {} elements".format(len(no_design_space_elements)))
         counter = -1
         for element_key in elements:
@@ -38,7 +37,7 @@ class TopologyOptimizer(object):
     def set_compaction_ratio(self, compaction_ratio):
         self.__compaction_ratio = compaction_ratio
 
-    def get_element_sets_by_density(self, elements: Dict[int, Element]) -> List[ElementSet]:
+    def get_element_sets_by_density(self, elements):
         element_sets = []
         for i in range(self.__density_material.get_steps()):
             element_sets.append([])
@@ -59,7 +58,7 @@ class TopologyOptimizer(object):
     def filter_sensitivity(self, element_filter, sensitivity):
         return element_filter.filter_element_properties(sensitivity * self.__current_density)
 
-    def filter_density(self, element_filter: ElementFilter):
+    def filter_density(self, element_filter):
         self.__current_density = element_filter.filter_element_properties(self.__current_density)
 
     def change_density(self, sensitivity):

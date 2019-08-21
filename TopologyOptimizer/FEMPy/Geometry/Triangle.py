@@ -1,5 +1,4 @@
 from .Point import Point
-from typing import List
 import numpy as np
 
 class Triangle(object):

@@ -1,9 +1,9 @@
-from typing import List
+
 import os
 
 class CCXSolver(object):
 
-    def __init__(self, solver_path: str, input_deck_path: str):
+    def __init__(self, solver_path, input_deck_path):
         self.__solver_path = solver_path
         self.__input_path = input_deck_path
         self.__2D_case = False

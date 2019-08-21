@@ -1,10 +1,9 @@
-from typing import Dict
 from .FEMPy.Element import Element
 import numpy as np
 
 class ElementFilter():
 
-    def __init__(self, elements: Dict[int, Element]):
+    def __init__(self, elements):
 
         # structure[elemID] = [[scaling_vector], [Referenced elements]]
         self.__structure = {}

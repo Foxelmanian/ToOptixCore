@@ -1,7 +1,6 @@
 from .Node import Node
 from .Element import Element
 from .Material import Material
-from typing import Dict, List
 
 
 class FEMBody(object):
@@ -9,22 +8,22 @@ class FEMBody(object):
 
     """
 
-    def __init__(self, name: str, nodes: Dict[int, Node], elements:  Dict[int, Element], material: Material):
+    def __init__(self, name, nodes, elements, material):
         self.__nodes = nodes
         self.__elements = elements
         self.__materials = [material]
         self.__name = name
 
-    def get_nodes(self) -> Dict[int, Node]:
+    def get_nodes(self):
         return self.__nodes
 
-    def get_materials(self) -> List[Material]:
+    def get_materials(self):
         return self.__materials
 
-    def set_materials(self, materials: List[Material]):
+    def set_materials(self, materials):
         self.__materials = materials
 
-    def get_elements(self) -> Dict[int, Element]:
+    def get_elements(self):
         return self.__elements
 
     def __str__(self):

@@ -12,7 +12,7 @@ class Point(object):
     >>> p1 = Point(1.0, 1.0, 1.0)
     """
 
-    def __init__(self, x:float, y:float, z:float):
+    def __init__(self, x, y, z):
         self.__x = x
         self.__y = y
         self.__z = z

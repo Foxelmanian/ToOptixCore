@@ -65,13 +65,13 @@ class OptimizationController(object):
     def plot_only_last_result(self, activate=False):
         self.__plot_only_last_result = activate
 
-    def set_result_file_name(self, file_name: str):
+    def set_result_file_name(self, file_name):
         self.__result_file_name = file_name
 
     def use_filter(self, boolean_v):
         self.__use_filter = boolean_v
 
-    def set_volumina_ratio(self, volumina_ratio:float):
+    def set_volumina_ratio(self, volumina_ratio):
         self.__volumina_ratio = volumina_ratio
 
     def set_maximum_iterations(self, maximum_iterations):
@@ -98,7 +98,7 @@ class OptimizationController(object):
                     # Create each time a new fem body for each type
                     fem_builder = CCXPhraser(file)
                     if self.__set_name != None:
-                        print(f'No Design element set: {self.__set_name}')
+                        print('No Design element set: ' + self.__set_name)
                         self.__no_design_space.extend(fem_builder.get_elements_by_set_name(self.__set_name))
                     fem_body = fem_builder.get_fem_body()
                     ele_filter = ElementFilter(fem_body.get_elements())
@@ -323,7 +323,14 @@ class OptimizationController(object):
                         res_density.append(fem_body.get_elements()[element_key].get_density())
                         res_elem.append(fem_body.get_elements()[element_key])
 
-            result_values = f'{iteration}, {sum(sensitivity_vector_obj)}, {sum(sensitivity_vector)}, {self.__penalty_exponent}, {self.__volumina_ratio}, {sum(res_density) / len(fem_body.get_elements())}, {len(res_density) / len(fem_body.get_elements())} \n'
+            result_values = '{}, {}, {}, {}, {}, {}, {} \n'.format(iteration,
+                                                            sum(sensitivity_vector_obj),
+                                                            sum(sensitivity_vector),
+                                                            self.__penalty_exponent,
+                                                            self.__volumina_ratio,
+                                                            sum(res_density) / len(fem_body.get_elements()),
+                                                            len(res_density) / len(fem_body.get_elements()))
+
             print(result_values)
             obj_file.write(result_values)
 

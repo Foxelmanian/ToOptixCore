@@ -1,14 +1,13 @@
 from .Element import Element
-from typing import List
 
 class ElementSet(object):
 
-    def __init__(self, name: str, elements: List[Element]):
+    def __init__(self, name, elements):
         self.__name = name
         self.__elements = elements
 
-    def get_name(self) -> str:
+    def get_name(self):
         return self.__name
 
-    def get_elements(self) -> List[Element]:
+    def get_elements(self):
         return self.__elements

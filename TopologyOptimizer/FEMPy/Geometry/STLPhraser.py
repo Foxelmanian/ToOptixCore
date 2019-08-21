@@ -4,7 +4,7 @@ import re
 from .Triangle import Triangle
 from .Solid import Solid
 from .Point import Point
-from typing import List
+
 
 class File(object):
     """ File-object
@@ -57,13 +57,13 @@ class STL(File):
         if self.filepath:
             self.read()
 
-    def get_parts(self)->List[Solid]:
+    def get_parts(self):
         """
         :return: All solid objects which are imported
         """
         return self.__parts
 
-    def add_solid(self, solid: Solid):
+    def add_solid(self, solid):
         self.__parts.append(solid)
 
 

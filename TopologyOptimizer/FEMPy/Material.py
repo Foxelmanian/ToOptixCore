@@ -1,39 +1,37 @@
-from typing import List
-
 
 class Elasticity(object):
 
-    def __init__(self, young_module: float, contraction: float, temperature: float):
+    def __init__(self, young_module, contraction, temperature):
         self.__temperature = temperature
         self.__contraction = contraction
         self.__young_module = young_module
 
-    def get_temperature(self) -> float:
+    def get_temperature(self):
         return self.__temperature
 
-    def get_contraction(self) -> float:
+    def get_contraction(self):
         return self.__contraction
 
-    def get_young_module(self) -> float:
+    def get_young_module(self):
         return self.__young_module
 
 
 class Conductivity(object):
-    def __init__(self, conductivity: float, temperature: float):
+    def __init__(self, conductivity, temperature):
         self.__temperature = temperature
         self.__conductivity = conductivity
 
-    def get_temperature(self) -> float:
+    def get_temperature(self):
         return self.__temperature
 
-    def get_conductivity(self) -> float:
+    def get_conductivity(self):
         return self.__conductivity
 
 
 
 class Material(object):
 
-    def __init__(self, name: str):
+    def __init__(self, name):
 
         self.__name = name
         self.__elasticity = []
@@ -52,10 +50,10 @@ class Material(object):
         return ('Name: {} Elasticity entrys: {} Conductivity entrys: {} '.format(
             self.__name, len(self.__elasticity), len(self.__conductivity)))
 
-    def get_elasticity(self) -> List[Elasticity]:
+    def get_elasticity(self):
         return self.__elasticity
 
-    def get_conductivity(self) -> List[Conductivity]:
+    def get_conductivity(self):
         return self.__conductivity
 
 

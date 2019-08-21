@@ -1,20 +1,19 @@
 from .FEMPy.Material import Material
-from typing import List
 
 class DensityMaterial(object):
 
-    def __init__(self, material: Material, steps: int, penalty_exponent: float):
+    def __init__(self, material, steps, penalty_exponent):
         self.__material = material
         self.__steps = steps
         self.__penalty = penalty_exponent
 
-    def get_penalty_exponent(self) -> float:
+    def get_penalty_exponent(self):
         return self.__penalty
 
-    def get_steps(self) -> int:
+    def get_steps(self):
         return self.__steps
 
-    def get_density_materials(self) -> List[Material]:
+    def get_density_materials(self):
         density_materials = []
         for i in range(self.__steps):
             density_mat = Material("topo_material" + str(i + 1))

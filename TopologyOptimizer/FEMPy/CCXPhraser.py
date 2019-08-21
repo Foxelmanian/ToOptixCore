@@ -1,9 +1,8 @@
 from .FEMBody import FEMBody
 from .Node import Node
 from .Material import Material
-from typing import Dict
+
 from .Element import Element
-from typing import List
 
 
 class CCXPhraser(object):
@@ -12,7 +11,7 @@ class CCXPhraser(object):
     This FEM object is used for topology optimization
     """
 
-    def __init__(self, file_name: str):
+    def __init__(self, file_name):
 
         # Initialize a FEMBody
         try:
@@ -23,24 +22,24 @@ class CCXPhraser(object):
             self.__material = self.__get_material()
             self.__fem_body = FEMBody("CCXPhraser", self.__nodes, self.__elements, self.__material)
             self.__file.close()
-        except FileNotFoundError as e:
+        except IOError as e:
             print(e)
 
-    def __is_empty_list(self, list: List)-> bool:
+    def __is_empty_list(self, list):
         empty = True
         for element in list:
             if element not in [" ", ",", "", "\n", "\t"]:
                 empty = False
         return empty
 
-    def __remove_empty_parts(self, list: List)-> List:
+    def __remove_empty_parts(self, list):
         new_list = []
         for element in list:
             if element not in [" ", ",", "", "\n", "\t"]:
                 new_list.append(element)
         return new_list
 
-    def __is_line_to_ignore(self, line)->bool:
+    def __is_line_to_ignore(self, line):
         if len(line) < 1:
             return False
         if line[:-1].isspace():
@@ -48,7 +47,7 @@ class CCXPhraser(object):
         if "**" in line:
             return False
 
-    def get_fem_body(self) -> FEMBody:
+    def get_fem_body(self):
         return self.__fem_body
 
     def get_elements_by_set_name(self, name=None):
@@ -83,7 +82,7 @@ class CCXPhraser(object):
         self.__file.close()
         return elements
 
-    def __get_nodes(self) -> Dict[int, Node]:
+    def __get_nodes(self):
         node_dict = {}
         read_attributes = False
         self.__file.seek(0) # Start at first line
@@ -111,7 +110,7 @@ class CCXPhraser(object):
                 read_attributes = True
         return node_dict
 
-    def __get_elements(self) -> Dict[int, Element]:
+    def __get_elements(self):
 
         element_dict = {}
         read_attributes = False
@@ -195,7 +194,7 @@ class CCXPhraser(object):
         return element_dict
 
 
-    def __get_material(self) -> Material:
+    def __get_material(self):
 
         read_elastic = False
         read_conductivity = False
@@ -253,10 +252,10 @@ class CCXPhraser(object):
 
 class FRDReader(object):
 
-    def __init__(self, file_name: str):
+    def __init__(self, file_name):
         self.__file_name = file_name + ".frd"
 
-    def get_displacement(self, node_dictonary: Dict[int, Node]):
+    def get_displacement(self, node_dictonary):
         frd_file = open(self.__file_name, "r")
         displacement_section = False
         for line in frd_file:
@@ -274,7 +273,7 @@ class FRDReader(object):
                 disp_z = float(line[37:49])
                 node_dictonary[node_id].set_displacement(disp_x, disp_y, disp_z)
 
-    def get_temperature(self, node_dictonary: Dict[int, Node]):
+    def get_temperature(self, node_dictonary):
         frd_file = open(self.__file_name, "r")
         displacement_section = False
         for line in frd_file:
@@ -293,10 +292,10 @@ class FRDReader(object):
 
 class DATReader(object):
 
-    def __init__(self, file_name: str):
+    def __init__(self, file_name):
         self.__file_name = file_name + ".dat"
 
-    def get_displacement(self, node_dictonary: Dict[int, Node]):
+    def get_displacement(self, node_dictonary):
 
 
         frd_file = open(self.__file_name, "r")
@@ -331,7 +330,7 @@ class DATReader(object):
 
 
 
-    def get_energy_density(self, element_dictonary: Dict[int, Element]):
+    def get_energy_density(self, element_dictonary):
 
         energy_vector = []
         frd_file = open(self.__file_name, "r")
@@ -361,7 +360,7 @@ class DATReader(object):
             energy_vector.append(element_dictonary[key].get_strain_energy())
         return energy_vector
 
-    def get_heat_flux(self, element_dictonary: Dict[int, Element]):
+    def get_heat_flux(self, element_dictonary):
 
         frd_file = open(self.__file_name, "r")
         energy_section = False
