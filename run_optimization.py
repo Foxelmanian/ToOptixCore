@@ -1,4 +1,4 @@
-from TopologyOptimizer.OptimizationController import OptimizationController
+from ToOptix.OptimizationController import OptimizationController
 import os
 import json
 
