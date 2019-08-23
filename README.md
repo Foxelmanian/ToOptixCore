@@ -33,6 +33,13 @@
 ## Installation
 - Install python 3.xx
 - Download ToOptix
+- Install via python setup
+- You can then delete the Source Files
+
+```bash,installation
+python setup.py install
+``` 
+
 
 ### General information
 - Start this program in a user directory so Blender should be for example on the desktop 
