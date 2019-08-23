@@ -31,7 +31,7 @@
 - Filter selects only the element around the filter object
 
 ## Installation
-- Install python 3.xx
+- Install Python 2.xx or Pyhton 3.xx (Tested for Python3)
 - Download ToOptix
 - Install via python setup
 - You can then delete the Source Files
