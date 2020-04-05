@@ -117,13 +117,13 @@ for vol_frac in [0.4, 0.6]:
 
 ``` 
 
-### Blender AddOn
+### Blender AddOn: Tested on Version 2.75
 Location of the Blender Addon
 [Blender Addon](https://github.com/DMST1990/ToOptixBlenderAddon)
 
 
-### FreeCAD Macro
-Location of the Blender Addon
+### FreeCAD Macro: Tested on Version 0.16 faild on version 0.17>
+Location of the FreeCAD Addon
 [FreeCAD Addon](https://github.com/DMST1990/ToOptixFreeCADAddon)
 
 ## Output
